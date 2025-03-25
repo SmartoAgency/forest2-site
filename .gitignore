@@ -1,0 +1,14 @@
+/**/.DS_Store
+/**/_backstage
+/**/Thumbs.db
+/.git/
+/node_modules/
+/.idea/
+/yarn.lock
+/package-lock.json
+/dist/
+/prod/
+/src/assets/svg-sprite/sprite/symbol_sprite.php
+/src/assets/images/video/ozon-saga.mp4
+/src/assets/images/video/apartments-video.mp4
+/src/static/home-video.mp4

@@ -1,0 +1,61 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'single-page'
+    var id_page = 'id-page-single-page'
+    var class_page = 'class-page-single-page'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Осінній цінопад',
+        link: pagesLink[0].single-page
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/footer.js')
+block content
+  include ../includes/breadcrumbs.pug
+  .single-page.row-flex.container-side-padding
+    .title-single-page Осінній цінопад
+    .single-page__content
+      .text
+        i.italic-bold Обирай
+        |  комфортне
+        i.italic-bold  житло 
+        |  без переплат
+        i.italic-bold  у Вінниці.
+      .big-text Житловий комплекс «Forest Home» — той випадок, коли архітектори передбачили всі побажання і зуміли виконати їх. Так на території комплексу облаштовані сучасні дитячі та спортивні майданчики, а також зручні озеленені, квітучі зони відпочинку для всієї родини. Поряд з комплексом розташовані дитячі садочки, школи, паркова зона, торговий центр і ринок «Пасаж». 
+      .big-text.mt30.mb20 Forest Home має ряд переваг:
+      ul
+        li.single-page__content-list.big-text Розташований в затишному та спокійному районі
+        li.single-page__content-list.big-text Велика кількість паркомісць
+        li.single-page__content-list.big-text Поруч паркова зона для прогулянок і відпочинку
+        li.single-page__content-list.big-text Безліч дитячих та спортивних майданчиків, зон відпочинку
+        li.single-page__content-list.big-text Розташований в затишному та спокійному районі
+        li.single-page__content-list.big-text Безліч дитячих та спортивних майданчиків, зон відпочинку
+        li.single-page__content-list.big-text Поруч паркова зона для прогулянок і відпочинку
+        li.single-page__content-list.big-text Однокімнатні квартири від 41м
+          sub 2
+          |, двокімнатні квартири від 58м
+          sub 2
+      a(href="#").button.button--calypso--green.button-green 
+        span Обрати квартиру
+    .single-page__date 25.10.2021
+    .single-page__img
+      img(src="./assets/images/img/inner-page-img-1.jpg", alt="inner-page-img-1")
+
+
+block footer
+  include ../includes/footer.pug
+block header
+  include ../includes/header.pug

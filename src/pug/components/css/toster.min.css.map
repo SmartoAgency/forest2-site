@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../toster/toster.scss"
+    ],
+    "names": [],
+    "file": "toster.min.css"
+}

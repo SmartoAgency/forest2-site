@@ -1,0 +1,45 @@
+#popup.popup
+  .popup__block
+    button#popup-close.popup__close
+      svg(width='13' height='13' viewbox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M1 1.00001L12 12M1 12L12 1' stroke='#26262C' stroke-width='2')
+    form.home-contact--width(data-home-popup='' autocomplete='off')
+      h2.title.home-contact--width Замовити дзвінок
+      .small-text.mb50.home-contact--width Отримайте детальний прорахунок від нашого менеджера всього за 5 хвилин
+      .form-field.form-field-input.mb30(data-field-input='' data-field-name='' data-status='field--inactive' data-animation='none')
+        .form-field-message Ваше ім`я:
+        input.form-field__input(type='text' name='name' placeholder='Ім`я*' maxlength='31')
+        .input-message(data-input-message='')
+      .form-field.disabled.form-field-input(data-field-input='' data-field-phone='' data-status='field--inactive' data-animation='none')
+        .form-field-message Телефон
+        input.form-field__input.input-tel(type='tel' name='phone' placeholder='' inputmode='tel')
+        span.place-holder + 38 ___-___-__-__
+        .mask-absolute.js-mask-absolute
+        .input-message(data-input-message='')
+      .small-text.mt50.home-contact--width Натискаючи на кнопку, Ви погоджуєтесь з обробкою персональних даних. 
+      .form-btn-wrap.df.jcsb.aic
+        button.button.button--calypso--green.button-green.home-contact-btn--size(type='submit' data-btn-submit='data-btn-submit') 
+          span Надіслати
+          div(data-btn-submit-text='' style='display:none')
+  .popup__overlay
+
+#thanks-page.thanks-page
+  .thanks-page__block
+    button#thanks-page-close.thanks-page__close
+      svg(width='13' height='13' viewbox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M1 1.00001L12 12M1 12L12 1' stroke='#26262C' stroke-width='2')
+    .thanks-page__wrapper
+      .thanks-page__title Дякуємо, Ваша заявка прийнята!
+      .thanks-page__text Наші менеджери зв’яжуться з Вами найближчим часом
+      .thanks-page__svg 
+        svg(width='27' height='20' viewbox='0 0 27 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M1 11L8.5 18.5L25.5 1' stroke='white' stroke-width='2' stroke-linejoin='round')
+    .thanks-page__social Приєднуйтесь:
+      span instagram
+      span facebook
+  .thanks-page__overlay
+
+.mobile-callback-popup(data-mobile-callback-popup) 
+  a.mobile-callback-popup__tel(href="tel:+380671106104") Виклик +380 (67) 110 61 04
+  .mobile-callback-popup__callback(data-call-form-popup) Зворотній дзвінок
+  .mobile-callback-popup__close(data-mobile-callback-close) Відмінити

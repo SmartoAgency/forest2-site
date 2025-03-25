@@ -1,0 +1,102 @@
+.wrapper-breadcrumbs {
+  position: relative;
+  z-index: 3;
+  --v-padding: 220px;
+  padding-top: var(--v-padding);
+  @include row-flex();
+  &-inner-page-contact {
+    background-color: #26262C;
+  }
+  .breadcrumbs {
+    // display: flex;
+    @include shift-left(1);
+    @include shift-right(0);
+    @include size(11);
+    &-item {
+      display: inline-block;
+      &__link {
+        position: relative;
+        margin-right: 44px;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: var(--fz-15);
+        letter-spacing: 0.7em;
+        text-transform: uppercase;
+        color: #717386;
+        &::after {
+          content: "";
+          width: 4px;
+          height: 10px;
+          background-image: url("../images/img/breadcrumbs-line.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          right: -20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &.inner-page-contact {
+          &::after {
+            background-image: url("../images/img/breadcrumbs-line-2.svg");
+          }
+        }
+        &.inner-page-gallery {
+          &::after {
+            background-image: url("../images/img/breadcrumbs-line-2.svg");
+          }
+        }
+      }
+      &:last-child a {
+        margin-right: 0;
+        &::after {
+            visibility: hidden;
+        }
+      }
+      &:first-child a {
+          color: #40414F;
+      }
+      &:first-child a.inner-page-contact {
+        color: #EBEFF4;
+      }
+      &:first-child a.inner-page-gallery {
+        color: #EBEFF4;
+      }
+      &:last-child a.inner-page-contact {
+        color: #96969F;
+      }
+      &:last-child a.inner-page-gallery {
+        color: #96969F;
+      }
+    }
+  }
+}
+@media (max-width: 1600px) {
+  .wrapper-breadcrumbs {
+    --v-padding: 150px;
+  }
+}
+@media (max-width: 992px) {
+  .wrapper-breadcrumbs {
+    .breadcrumbs {
+      @include shift-left(0);
+      @include shift-right(0);
+      @include size(12);
+    }
+  }
+}
+@media (max-width: 576px) {
+  .wrapper-breadcrumbs {
+    --v-padding: 95px;
+    .breadcrumbs {
+      &-item {
+        &__link {
+          margin-right: 24px;
+          &::after {
+            height: 9px;
+            right: -10px;
+          }
+        }
+      }
+    }
+  }
+}

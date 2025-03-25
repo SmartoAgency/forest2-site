@@ -1,0 +1,16 @@
+// @import '../scripts/libs/swiper/swiper';
+@import '../../../node_modules/accordion-js/dist/accordion.min';
+@import '../../../node_modules/swiper/swiper-bundle.min';
+
+.ac .ac-trigger::after {
+    display: none;
+}
+
+.ac .ac-trigger {
+    width: auto;
+}
+
+.ac .ac-trigger {
+    font-family: $default-font;
+    padding: 0;
+}

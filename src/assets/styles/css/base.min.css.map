@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,CAAC,CACD,CAAC,AAAA,QAAQ,CACT,CAAC,AAAA,OAAO,AAAC,CACP,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,MAAM,CAAE,CAAC,CACT,UAAU,CAAE,UAAU,CACvB",
+    "sources": [
+        "../assets/base.scss"
+    ],
+    "names": [],
+    "file": "base.min.css"
+}

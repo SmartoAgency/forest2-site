@@ -1,0 +1,212 @@
+.single-page {
+  --v-padding: 150px;
+  padding-bottom: var(--v-padding);
+  @include row-flex();
+  .title-single-page {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: #40414F;
+    @include shift-left(1);
+    @include shift-right(6);
+    @include size(5);
+  }
+  &__content {
+    @include shift-left(1);
+    @include shift-right(0);
+    @include size(4);
+    .text {
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+    .mt30 {
+      margin-top: 30px;
+    }
+    .mb20 {
+      margin-bottom: 20px;
+    }
+    &-list {
+      position: relative;
+      margin-bottom: 15px;
+      margin-left: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: -15px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--green);
+      }
+    }
+  }
+  &__date {
+    @include shift-left(0);
+    @include shift-right(0);
+    @include size(1);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: right;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #717386;
+  }
+  &__img {
+    @include shift-left(0);
+    @include shift-right(0);
+    @include size(6);
+    text-align: right;
+    img {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 1600px) {
+  .single-page {
+    --v-padding: 100px;
+    .title-single-page {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+    &__content {
+      .text {
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+      .big-text {
+        font-size: 14px;
+      }
+      .mt30 {
+        margin-top: 40px;
+      }
+      .mb20 {
+        margin-bottom: 10px;
+      }
+      &-list {
+        position: relative;
+        margin-bottom: 10px;
+        margin-left: 13px;
+        &::before {
+          top: 9.5px;
+          width: 3px;
+          height: 3px;
+        }
+      }
+      .button {
+        margin-top: 40px;
+        margin-right: 0;
+      }
+    }
+    &__date {
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .single-page {
+    &__content {
+      @include shift-left(1);
+      @include shift-right(0);
+      @include size(4.3);
+    }
+    &__date {
+      @include shift-left(0);
+      @include shift-right(0);
+      @include size(1.2);
+    }
+    &__img {
+      @include shift-left(0);
+      @include shift-right(0);
+      @include size(5.5);
+    }
+  }
+}
+@media (max-width: 992px) {
+  .single-page {
+    --v-padding: 100px;
+    .title-single-page {
+      order: 1;
+      font-size: 22px;
+      margin-bottom: 30px;
+      @include shift-left(0);
+      @include shift-right(0);
+      @include size(9);
+    }
+    &__date {
+      align-self: center;
+      order: 2;
+      @include shift-left(0);
+      @include shift-right(1);
+      @include size(2);
+    }
+    &__img {
+      order: 3;
+      @include shift-left(0);
+      @include shift-right(0);
+      @include size(12);
+      // img {
+      //   height: 300px;
+      //   object-fit: cover;
+      // }
+    }
+    &__content {
+      margin-top: 30px;
+      order: 4;
+      @include shift-left(1);
+      @include shift-right(1);
+      @include size(10);
+      .text {
+        margin-bottom: 10px;
+      }
+      .mt30 {
+        margin-top: 30px;
+      }
+      &-list {
+        margin-bottom: 8px;
+        margin-left: 10px;
+      }
+      .button {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .single-page {
+    --v-padding: 60px;
+    .title-single-page {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    &__date {
+      font-size: 10px;
+      // @include shift-left(0);
+      // @include shift-right(0);
+      // @include size(3);
+    }
+    &__content {
+      margin-top: 20px;
+      @include shift-left(0);
+      @include shift-right(0);
+      @include size(12);
+      .big-text {
+        font-size: 12px;
+      }
+      .mt30 {
+        margin-top: 20px;
+      } 
+      .mb20 {
+        margin-bottom: 10px;
+      }
+      
+    }
+  }
+}

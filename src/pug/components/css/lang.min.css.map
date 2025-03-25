@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../lang/lang.scss"
+    ],
+    "names": [],
+    "file": "lang.min.css"
+}

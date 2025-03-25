@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../assets/smart-grid.scss"
+    ],
+    "names": [],
+    "file": "smart-grid.min.css"
+}

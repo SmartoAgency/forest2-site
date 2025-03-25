@@ -1,0 +1,51 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'gallery'
+    var id_page = 'id-page-gallery'
+    var class_page = 'class-page-gallery'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Галерея',
+        link: pagesLink[0].gallery
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/footer.js')
+  script(defer src='./assets/scripts/slick.min.js')
+  script(defer src='./assets/scripts/gallery.js')
+  //- script(defer src='./assets/scripts/animation.js')
+block content
+  include ../includes/breadcrumbs.pug
+  .gallery#up
+    .gallery__title.row-flex.container-side-padding
+      .title-big Галерея
+    .gallery__background-top
+    .gallery__background
+    .slider
+      .slider__image
+         img(src='./assets/images/img/gallery-slider-1.jpg' alt='gallery-slider-1')
+      .slider__image
+         img(src='./assets/images/img/gallery-slider-2.jpg' alt='gallery-slider-2')
+      .slider__image
+         img(src='./assets/images/img/gallery-slider-3.jpg' alt='gallery-slider-3')
+      .slider__image
+         img(src='./assets/images/img/gallery-slider-4.jpg' alt='gallery-slider-4')
+      .slider__image
+         img(src='./assets/images/img/gallery-slider-5.jpg' alt='gallery-slider-5')
+
+block footer
+  include ../includes/footer.pug
+block header
+  include ../includes/header.pug

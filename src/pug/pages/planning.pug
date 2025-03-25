@@ -1,0 +1,141 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'planning'
+    var id_page = 'id-page-planning'
+    var class_page = 'class-page-planning'
+    var breadcrumbsSubitem = [
+      {
+        label: '3D планування',
+        link: pagesLink[0].planning
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/footer.js')
+  script(defer src='./assets/scripts/planning.js')
+block content
+  include ../includes/breadcrumbs.pug
+  .planning#up
+    .planning__title.row-flex.container-side-padding
+      .title-big 3D планування
+    section.planning-1.row-flex.container-side-padding
+      img.planning-1__img(src="./assets/images/img/planning-1-img.jpg", alt="planning-1-img")
+      .planning-1__wrapper
+        .text
+          i.italic-bold Прогулятися квартирою
+          |  перед тим, як її придбати?
+          i.italic-bold  Легко!
+          |  І вам не потрібно чекати на закінчення будівництва.
+        .big-text Forest Home запустив віртуальні шоуруми найпопулярніших планувань у будинку, щоб при виборі помешкання ви могли побачити розташування кімнат і навіть оцінити вид з вікон. Однокімнатна або двокімнатна квартира — клікайте на наш 3D-тур та ласкаво просимо до вашої майбутньої оселі!
+    section.planning-2.row-flex
+      .planning-2__wrapper
+        .title-inner-page 1-кімнатна квартира 1Ж
+        .text Для тих, хто
+          i.italic-bold  цінує
+          |  чіткість та
+          i.italic-bold  лаконічність.
+        .big-text Квартира має прекрасні видові характеристики завдяки великим панорамним вікнам та близькістю розташування ЖК «Forest Home» до лісопаркової зони.
+        .big-text.mt20 Загальна площа складає 45,6 м
+          sub 2
+          |. Кухня вміщує функціональну робочу зону і зону зі столом для теплих розмов за споживанням улюблених страв. У спальні розміщується двоспальне ліжко, трюмо, шафа, телевізор та полиці для Ваших близьких серцю речей та аксесуарів. Вбиральня вміщує ванну, унітаз, умивальник, пральну машину і зони для зберігання. Передпокій містить велику вбудовану шафу, а також консоль. 
+        a(href='#').button.button--calypso--green.button-green 
+          span планування
+      .planning-2__img
+        img(src="./assets/images/img/iframe-1.png", alt="iframe-1")
+        iframe.frame-class(src='https://vrnet.io/view5.16a/?model=ua/bmu6/forresthome/1zhe' allowfullscreen='' allow='vr;fullscreen *;xr-spatial-tracking;xr;')
+        .green-round 360°
+        //- .img-text Натисніть для перегляду
+    section.planning-3.row-flex.container-side-padding
+      .planning-3__img
+        img(src="./assets/images/img/iframe-2.png", alt="iframe-2")
+        iframe.frame-class(src='https://vrnet.io/view5.16a/?model=ua/bmu6/forresthome/2a' allowfullscreen='' allow='vr;fullscreen *;xr-spatial-tracking;xr;')
+        .green-round 360°
+        //- .img-text Натисніть для перегляду
+      .planning-3__wrapper
+        .title-inner-page 2-кімнатна квартира 2А
+        .text
+          i.italic-bold Естетика та простір
+          |   - головні переваги цієї квартири.
+        .big-text Квартира 66,7 м
+          sub 2 
+          | для сім’ї з дітьми. У плануванні дві великі просторі кімнати з панорамними вікнами. Велика гардеробна кімната. Кухня 16,6 м
+          sub 2 
+          | вміщує робочу зону та зону відпочинку. Функціональна вбиральня. У передпокої шафа для верхнього одягу. 
+        .big-text.mt20 Переконайтесь у перевагах цієї квартири, скориставшись функцією 3D-туру.
+        a(href='#').button.button--calypso--green.button-green 
+          span планування
+    section.planning-4.row-flex
+      .planning-4__wrapper
+        .title-inner-page 1-кімнатна квартира 1І
+        .text Квартира для тих, хто хоче бути
+          i.italic-bold  ближче до природи
+          |  у міському просторі.
+        .big-text Загальна площа квартири 47,8 м
+          sub 2
+          |. Функціональна кухня вміщує робочу зону для приготування улюблених страв та  зону відпочинку. Із кухні-студії є вихід на засклений балкон. Спальня простора та світла, у ній розміщується велике двоспальне ліжко, трюмо, шафи, телевізор, а також полиці для аксесуарів та приємних Вашим спогадам речей. Велика вбиральня. У передпокої передбачено місце для шафи.
+        .big-text.mt20 Запрошуємо Вас стати ближче до омріяної квартири, скориставшись функцією 3D-туру та надихнутись дизайном інтер’єру, який ми створили для Вас!
+        a(href='#').button.button--calypso--green.button-green 
+          span планування
+      .planning-4__img
+        img(src="./assets/images/img/iframe-3.png", alt="iframe-3")
+        iframe.frame-class(src='https://vrnet.io/view5.16a/?model=ua/bmu6/forresthome/1i' allowfullscreen='' allow='vr;fullscreen *;xr-spatial-tracking;xr;')
+        .green-round 360°
+        //- .img-text Натисніть для перегляду
+    section.planning-5.row-flex.container-side-padding
+      .planning-5__img
+        img(src="./assets/images/img/iframe-4.png", alt="iframe-4")
+        iframe.frame-class(src='https://vrnet.io/view5.16a/?model=ua/bmu6/forresthome/2b' allowfullscreen='' allow='vr;fullscreen *;xr-spatial-tracking;xr;')
+        .green-round 360°
+        //- .img-text Натисніть для перегляду
+      .planning-5__wrapper
+        .title-inner-page 2-кімнатна квартира 2б
+        .text
+          i.italic-bold Зручність, комфорт, затишок
+          |  – це все про планування цієї квартири. 
+        .big-text Двокімнатна квартира загальною площею 60 м
+          sub 2
+          |. Великі просторі кімнати площею 14,7 м
+          sub 2 
+          | та 16,7 м
+          sub 2
+          |. Кухня вміщує функціональну робочу зону та зону для споживання Ваших улюблених страв. Завдяки вигляду з панорамних вкон на лісопаркову зону Ви швидко відновите сили та станете ближче до природи. Містка вбиральня. У передпокої розміщується шафа для одягу. У цій квартирі увесь простір працює на Вас, створюючи комфорт.
+        .big-text.mt20 Натискайте функцію 3D-туру та насолоджуйтесь досконалістю та зручністю даної квартири.
+        a(href='#').button.button--calypso--green.button-green 
+          span планування
+    section.planning-6.row-flex
+      .planning-6__wrapper
+        .title-inner-page 1-кімнатна квартира 1к
+        .text Для тих,
+          i.italic-bold  хто любить бути в тренді!
+        .big-text Площа квартири 46,7 м
+          sub 2
+          |. Містка гардеробна. Кухня площею 15,6 м
+          sub 2 
+          | із зоною для приготування та споживання улюблених страв. Спальня площею 17,7 м
+          sub 2
+          | із ліжком, телевізором, трюмо та зоною для зберігання. Панорамні вікна з виглядом на лісопаркову зону.
+        .big-text.mt20 Скористайтесь функцією 3D-туру квартирою, і Ви впевнитесь у зручності її планування та функціональності.
+        a(href='#').button.button--calypso--green.button-green 
+          span планування
+      .planning-6__img
+        iframe.frame-class(src='https://vrnet.io/view5.16a/?model=ua/bmu6/forresthome/1k' allowfullscreen='' allow='vr;fullscreen *;xr-spatial-tracking;xr;')
+        img(src="./assets/images/img/iframe-5.png", alt="iframe-5")
+        .green-round 360°
+
+
+
+block footer
+  include ../includes/footer.pug
+block header
+  include ../includes/header.pug

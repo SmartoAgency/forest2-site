@@ -1,0 +1,76 @@
+- 
+  var legendButton = [
+      {
+        icon: 'School.svg',
+        title: 'Школи та садочки',
+        category: 'education'
+      },
+      {
+        icon: 'Supermarket.svg',
+        title: 'Супермаркети та магазини',
+        category: 'shop'
+      },
+      {
+        icon: 'Restaurant.svg',
+        title: 'Ресторани і кав\'ярні',
+        category: 'cafe'
+      },
+      {
+        icon: 'Pharmacy.svg',
+        title: 'Медицина',
+        category: 'medicine'
+      },
+      {
+        icon: 'Sport complex.svg',
+        title: 'Спорт',
+        category: 'sport'
+      },
+      
+      {
+        icon: 'banks.svg',
+        title: 'Банки',
+        category: 'bank'
+      },
+      {
+        icon: 'Petrol station.svg',
+        title: 'АЗС',
+        category: 'petrol'
+      },
+      {
+        icon: 'Parks.svg',
+        title: 'Парки',
+        category: 'park'
+      },
+      {
+        icon: 'Nova  Poshta.svg',
+        title: 'Пошта',
+        category: 'post'
+      },
+      {
+        icon: 'Bus Stop.svg',
+        title: 'Громадський транспорт',
+        category: 'transport'
+      },
+      
+      
+  ];
+
+section.section-infrastructure
+  .section-infrastructure__content.accordion-container
+    .section-infrastructure__title Інфраструктура
+    .section-infrastructure__map.map
+      #map
+    .section-infrastructure__map-legend.ac
+      .section-infrastructure__map-legend-head.ac-header
+        .section-infrastructure__map-legend-title ФІЛЬТР ОБʼЄКТІВ
+        button(type="button").ac-trigger
+          <svg width="56" height="52" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M35.5 26C35.5 26.2761 35.2761 26.5 35 26.5H20.9998C20.7237 26.5 20.4998 26.2761 20.4998 26C20.4998 25.7239 20.7237 25.5 20.9998 25.5H35C35.2761 25.5 35.5 25.7239 35.5 26Z" fill="#EFF0F7"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M28 33.5C27.7239 33.5 27.5 33.2761 27.5 33L27.5 18.9998C27.5 18.7237 27.7239 18.4998 28 18.4998C28.2761 18.4998 28.5 18.7237 28.5 18.9998L28.5 33C28.5 33.2761 28.2761 33.5 28 33.5Z" fill="#EFF0F7"/>
+          </svg>
+      .section-infrastructure__map-legend-body.ac-panel
+        button(type="button" data-marker-reset).section-infrastructure__map-legend-main-button Показати всі
+        each val in legendButton
+          button(type="button" data-category=val.category data-marker).section-infrastructure__map-legend-button
+            img(src=`./assets/images/home/infrastructure/${val.icon}`, alt=`${val.title}`)
+            span #{val.title}

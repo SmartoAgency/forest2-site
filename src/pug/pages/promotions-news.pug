@@ -1,0 +1,90 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'promotions-news'
+    var id_page = 'id-page-promotions-news'
+    var class_page = 'class-page-promotions-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Акції та новини',
+        link: pagesLink[0].promotions-news
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/footer.js')
+  //- script(defer src='./assets/scripts/slick.min.js')
+  script(defer src='./assets/scripts/promotions-news.js')
+  //- script(defer src='./assets/scripts/animation.js')
+block content
+  include ../includes/breadcrumbs.pug
+  .promotions-news#up.row-flex.container-side-padding
+    .promotions-news__wrapper
+      .title-big Акції та новини
+      ul.promotions-news__tabs
+        li.promotions-news__tab.promotions-news-active Все
+          sup.promotions-news__tab-number 15
+        li.promotions-news__tab АкціЇ
+          sup.promotions-news__tab-number 3
+        li.promotions-news__tab Новини
+          sup.promotions-news__tab-number 12
+      .promotions-news__content.promotions-news__content-active
+        a.promotions-news__item(href='single-page.html')
+          .promotions-news__img
+            img(src="./assets/images/img/promotions-news-img-1.jpg", alt="promotions-news-img-1")
+          span.promotions-news__text
+            span.promotions-news__title Осінній цінопад на квартири у ЖК Forest Home
+            span.promotions-news__date 25.10.2021
+          span.promotions-news__tab-name Акція
+        a.promotions-news__item(href='single-page.html')
+          .promotions-news__img
+            img(src="./assets/images/img/promotions-news-img-2.jpg", alt="promotions-news-img-2")
+          span.promotions-news__text
+            span.promotions-news__title Безвідсоткове розтермінування у ЖК Forest Home
+            span.promotions-news__date 14.07.2021
+          span.promotions-news__tab-name Новина
+        a.promotions-news__item(href='single-page.html')
+          .promotions-news__img
+            img(src="./assets/images/img/promotions-news-img-3.jpg", alt="promotions-news-img-3")
+          span.promotions-news__text
+            span.promotions-news__title Безвідсоткове розтермінування у ЖК Forest Home
+            span.promotions-news__date 14.07.2021
+          span.promotions-news__tab-name Новина
+        a.promotions-news__item(href='single-page.html')
+          .promotions-news__img
+            img(src="./assets/images/img/promotions-news-img-4.jpg", alt="promotions-news-img-4")
+          span.promotions-news__text
+            span.promotions-news__title Осінній цінопад на квартири у ЖК Forest Home
+            span.promotions-news__date 25.10.2021
+          span.promotions-news__tab-name Акція
+        a.promotions-news__item(href='single-page.html')
+          .promotions-news__img
+            img(src="./assets/images/img/promotions-news-img-5.jpg", alt="promotions-news-img-5")
+          span.promotions-news__text
+            span.promotions-news__title Осінній цінопад на квартири у ЖК Forest Home
+            span.promotions-news__date 25.10.2021
+          span.promotions-news__tab-name Акція
+        a.promotions-news__item(href='single-page.html')
+          .promotions-news__img
+            img(src="./assets/images/img/promotions-news-img-6.jpg", alt="promotions-news-img-6")
+          span.promotions-news__text
+            span.promotions-news__title Безвідсоткове розтермінування у ЖК Forest Home
+            span.promotions-news__date.date 14.07.2021
+          span.promotions-news__tab-name Новина
+      a.button.button--calypso--green.button-green 
+        span Завантажити ще
+
+block footer
+  include ../includes/footer.pug
+block header
+  include ../includes/header.pug
