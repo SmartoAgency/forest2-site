@@ -46,11 +46,11 @@ $gold: #cfa46e;
 
   --page-side-fields: 70px;
 }
+:root {
+  --header-h: 100px;
+}
 
 @media (max-width: 1920px) {
-  :root {
-    --header-h: 100px;
-  }
 }
 
 @media (max-width: 1600px) {
