@@ -12,7 +12,7 @@ const observable = new BehaviorSubject(0); // 0 is the initial value
 
 
 observable.subscribe((value) => {
-    console.log(value);
+    // console.log(value);
     document.querySelectorAll('[data-planning-tab]').forEach((tab) => {
         const tabValue = tab.getAttribute('data-planning-tab');
         tab.classList.toggle('active', tabValue === value);
@@ -23,7 +23,7 @@ observable.subscribe((value) => {
     document.querySelectorAll('[data-planning-tab-slider]').forEach((slider) => {
         if (slider.swiper) return;
         const index = slider.dataset.planningTabSlider;
-        console.log('nO return', slider.swiper);
+        // console.log('nO return', slider.swiper);
         
         const swiper = new Swiper(slider, {
             modules: [Navigation],
@@ -33,19 +33,23 @@ observable.subscribe((value) => {
             },
             on: {
                 'init': (instance) => {
-                    document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = instance.slides.length;
+                    document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
                 },
             }
         });
         swiper.on('beforeResize', (instance) => {
-            document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = instance.slides.length;
+            document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
         });
         swiper.on('slideChange', (instance) => {
-            document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-current]`).textContent = instance.realIndex + 1;
-            document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = instance.slides.length;
+            document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-current]`).textContent = pad(instance.realIndex + 1);
+            document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
         });
     });
 });
+
+function pad(num) {
+    return num.toString().padStart(2, '0');
+}
 
 observable.next('0');
 

@@ -2,7 +2,7 @@ import markersFromPrevSite from "./markersFromPrevSite";
 
 const baseFolder = window.location.href.match(/localhost/) 
 ? './assets/images/markers/'
-: '/wp-content/themes/rams/assets/images/markers/';
+: '/wp-content/themes/forest-home/assets/images/markers/';
 
 const markersAdresses = {
     main: `${baseFolder}main.svg`,

@@ -22,6 +22,9 @@
   .menu-top-wrapper {
     height: 220px;
     background: linear-gradient(180deg, rgba(38, 38, 44, 0.4) 0%, rgba(38, 38, 44, 0) 100%);
+    @include from(1025px){
+      height: var(--header-h);
+    }
   }
 
   .menu-top {
@@ -133,6 +136,9 @@
     // overflow-y: auto;
     @include row-flex();
     align-items: end;
+    @include from(1025px){
+      align-items: center;
+    }
 
     &__left {
       @include shift-left(1);
@@ -211,7 +217,7 @@
         height: 100px;
         &__logo {
           width: 100px;
-          height: 100px;
+          // height: 100px;
           svg {
             max-width: 77px;
             height: 78px;
@@ -389,17 +395,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      &__logo {
+        img {
+          height: 30px;
+          width: auto;
+        }
+      }
       &__wrapper {
         display: grid;
-        grid-template-columns: repeat(3, 45px);
-        column-gap: 20px;
+        grid-template-columns: repeat(2, auto);
+        column-gap: 8px;
       }
 
       &__choose-flat,
       &__popup-mobile,
       &__menu {
         height: 45px;
+        width: 45px;
         border: 1px solid var(--green);
         background-color: #fff;
         border-radius: 50%;

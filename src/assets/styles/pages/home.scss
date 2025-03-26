@@ -158,10 +158,14 @@ body {
   margin-right: auto;
   width: calc(100% - 40px);
   border-radius: 40px;
+  padding-left: 0;
+  padding-right: 0;
   @include to(600px){
-    padding-left: 8px;
-    padding-right: 8px;
+    height: calc(var(--vh, 1vh) * 100 - var(--header-h) - 20px);
+  }
+  @include to(600px){
     border-radius: 20px;
+    width: calc(100% - var(--page-side-fields) * 2);
   }
   &__video {
     position: absolute;
@@ -186,9 +190,15 @@ body {
     z-index: 2;
     padding-top: 100px;
     padding-bottom: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: linear-gradient(270deg, rgba(31, 31, 31, 0.00) 50%, rgba(31, 31, 31, 0.50) 100%);
     @include to(600px){
       padding-top: 20px;
       padding-bottom: 8px;
+      padding-left: 8px;
+      padding-right: 8px;
+      background: linear-gradient(0deg, rgba(31, 31, 31, 0.00) 54.14%, rgba(31, 31, 31, 0.50) 100%)
     }
   }
   &__title {
@@ -210,6 +220,7 @@ body {
       line-height: 110%; /* 39.6px */
       letter-spacing: -2.16px;
       padding-left: 12px;
+      padding-right: 56px;
     }
   }
   &__adress {
@@ -1404,7 +1415,7 @@ body {
   .page__inner {
     overflow-x: hidden;
   }
-  body[id*="complex"] .page__inner {
+  body[class*="complex"] .page__inner {
     overflow: initial;
   }
   .green-round {

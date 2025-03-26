@@ -22,10 +22,10 @@ window.addEventListener('DOMContentLoaded', () => {
   function mobPopupHandler() {
     function close(el) {
       // gsap.to(el, { autoAlpha: 0 });
-      gsap.fromTo(el, { autoAlpha: 1, xPercent: 0 }, { autoAlpha: 0, xPercent: 100 });
+      gsap.fromTo(el, { autoAlpha: 1 }, { autoAlpha: 0 });
     }
     function open(el) {
-      gsap.fromTo(el, { autoAlpha: 0, xPercent: 100 }, { autoAlpha: 1, xPercent: 0 });
+      gsap.fromTo(el, { autoAlpha: 0 }, { autoAlpha: 1 });
     }
     const popup = document.querySelector('[data-mobile-callback-popup]'),
       call = document.querySelectorAll('[data-call-mobile-callback-popup]'),
@@ -67,9 +67,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 //Плейсхолдер на телефоне попапа
-const placeHolderPopup = document.querySelector('.popup__block .place-holder'),
-  inputPopup = document.querySelector('.popup__block .input-tel');
-placeHolderPopup.addEventListener('click', () => {
-  placeHolderPopup.style.display = 'none';
-  inputPopup.focus();
-});
+// const placeHolderPopup = document.querySelector('.popup__block .place-holder'),
+//   inputPopup = document.querySelector('.popup__block .input-tel');
+// placeHolderPopup.addEventListener('click', () => {
+//   placeHolderPopup.style.display = 'none';
+//   inputPopup.focus();
+// });

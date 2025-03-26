@@ -65,9 +65,11 @@ header
         </defs>
         </svg>
     .header-mobile__wrapper
-      a(href='#').header-mobile__choose-flat
-        img(src='./assets/images/img/choose-flat.svg' alt='choose-flat')
-      a.header-mobile__popup-mobile(href='#', data-call-mobile-callback-popup='')
-        img(src='./assets/images/img/popup-mobile.svg' alt='popup-mobile')
+      a#header-popup.button.button--secondary.button--calypso(data-modal='consultation' href='#')
+        span Замовити дзвінок
+      //- a(href='#').header-mobile__choose-flat
+      //-   img(src='./assets/images/img/choose-flat.svg' alt='choose-flat')
+      //- a.header-mobile__popup-mobile(href='#', data-call-mobile-callback-popup='')
+      //-   img(src='./assets/images/img/popup-mobile.svg' alt='popup-mobile')
       a(href='#')#header-mobile__menu.header-mobile__menu
         img(src='./assets/images/img/menu.svg' alt='menu')

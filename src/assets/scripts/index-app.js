@@ -17,6 +17,12 @@ global.axios = axios;
 window.addEventListener('load', function(evt) {
   animation(lenis);
 });
+
+if (window.screen.width < 600) {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
+}
+
+
 /*
  * smooth scroll end
  */

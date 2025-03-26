@@ -124,7 +124,7 @@ export default class SexyInput {
         blocks: [4, 2, 3, 2, 2],
         delimiters: [' ', ' ', ' ', ''],
       });
-      console.log(cleave);
+      // console.log(cleave);
       // input.addEventListener('countrychange', () => {
       //   const currentCountry = input.intTelIput.getSelectedCountryData();
       //   const { dialCode } = currentCountry;

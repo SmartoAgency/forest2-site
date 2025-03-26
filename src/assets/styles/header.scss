@@ -75,6 +75,9 @@ header {
     &__logo {
       pointer-events: auto;
       cursor: pointer;
+      @include from(1441px){
+        width: 135px;
+      }
     }
     &__right {
       display: flex;
@@ -101,6 +104,7 @@ header {
         background-color: var(--green);
         border-radius: 35px;
         transition: background-color .3s;
+        overflow: visible;
       }
       &-text {
         display: flex;
@@ -121,6 +125,8 @@ header {
         height: 55px;
         background-color: var(--white);
         border-radius: 50px;
+        transform-origin: center;
+        transform: translate(1px) scale(1.02);
         &-line {
           margin: 1.5px 0;
           width: 16px;
@@ -155,11 +161,11 @@ header {
       height: 100px;
       &__logo {
         width: 100px;
-        height: 100px;
-        img {
-          max-width: 77px;
-          height: 78px;
-        }
+        // height: 100px;
+        // img {
+        //   max-width: 77px;
+        //   height: 78px;
+        // }
       }
       &__right {
         &-text {
@@ -273,15 +279,19 @@ header {
       }
       &__wrapper {
         display: grid;
-        grid-template-columns: repeat(3, 45px);
-        column-gap: 20px;
+        grid-template-columns: repeat(2, auto);
+        column-gap: 8px;
+        .button {
+          padding: 18px 20px;
+        }
       }
       &__choose-flat,
       &__popup-mobile,
       &__menu {
         height: 45px;
+        width: 45px;
         border: 1px solid var(--green);
-        background-color: #fff;
+        background-color: var(--green);
         border-radius: 50%;
         display: flex;
         justify-content: center;

@@ -65,22 +65,25 @@ function initMap() {
     styles: mapStyle()
   });
   window.googleMap = map;
+  const baseFolder = window.location.href.match(/localhost/) 
+    ? './assets/images/markers/'
+    : '/wp-content/themes/forest-home/assets/images/markers/';
 
   iniCircleWithTooltip({
     map,
     radius: 500,
-    tooltipImgUrl: './assets/images/markers/500m.svg',
+    tooltipImgUrl: `${baseFolder}500m.svg`,
   })
   iniCircleWithTooltip({
     map,
     radius: 1000,
-    tooltipImgUrl: './assets/images/markers/1km.svg',
+    tooltipImgUrl: `${baseFolder}1km.svg`,
   });
 
   iniCircleWithTooltip({
     map,
     radius: 1500,
-    tooltipImgUrl: './assets/images/markers/1_5km.svg',
+    tooltipImgUrl: `${baseFolder}1_5km.svg`,
   });
 
   google.maps.event.addDomListener(window, "resize", function() {

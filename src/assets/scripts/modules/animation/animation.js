@@ -313,7 +313,7 @@ export default function animation(scroller) {
     digitsSvgHover();
     function section2PinBgChange() {
         const section = document.querySelector('.section-2');
-        const section5 = document.querySelector('.section-5');
+        const section5 = document.querySelector('.section-7');
         const pinEl = document.createElement('div');
         pinEl.setAttribute('data-screen2-pin', '');
         section.append(pinEl);
@@ -323,6 +323,7 @@ export default function animation(scroller) {
                 pin: pinEl,
                 scrub: true,
                 endTrigger: section5,
+                end: '85% 50%',
             }
         })
         .to(pinEl, { backgroundColor:  '#26262C', duration: 0.1},'-=25%')
