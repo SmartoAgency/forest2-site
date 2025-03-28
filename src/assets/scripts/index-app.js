@@ -253,5 +253,14 @@ document.addEventListener('DOMContentLoaded', () => {
 //   });
 // });
 
+document.body.addEventListener('click', evt => {
+  const target = evt.target.closest('.pageup');
+  if (!target) return;
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
+
 
 new Accordion(".accordion-container");

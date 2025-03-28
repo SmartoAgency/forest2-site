@@ -53,6 +53,13 @@ window.addEventListener('DOMContentLoaded', () => {
     openPopupMenu = document.querySelector('#menu-top-popup'),
     popup = document.querySelector('#popup'),
     closePopup = document.querySelector('#popup-close');
+  
+  document.body.addEventListener('click', (evt) => {
+    const target = evt.target.closest('[data-call-form]');
+    if (target) {
+      popup.classList.add('active');
+    }
+  });
 
   openPopup.addEventListener('click', () => {
     popup.classList.add('active');

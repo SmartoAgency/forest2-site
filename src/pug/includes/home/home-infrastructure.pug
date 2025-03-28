@@ -70,6 +70,7 @@ section.section-infrastructure
           </svg>
       .section-infrastructure__map-legend-body.ac-panel
         button(type="button" data-marker-reset).section-infrastructure__map-legend-main-button Показати всі
+        button(type="button" data-marker-hide).section-infrastructure__map-legend-main-button Прибрати всі
         each val in legendButton
           button(type="button" data-category=val.category data-marker).section-infrastructure__map-legend-button
             img(src=`./assets/images/home/infrastructure/${val.icon}`, alt=`${val.title}`)

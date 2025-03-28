@@ -127,6 +127,7 @@
             align-items: center;
             justify-content: center;
             gap:40px;
+            text-align: center;
             @include to(600px){
                 gap: 20px;
                 padding-left: 5px;
@@ -174,6 +175,7 @@
     }
     &__img-slider {
         overflow: hidden;
+        margin-bottom: 20px;
     }
     &__img-slide {
         position: relative;
@@ -227,6 +229,7 @@
         background-color: var(--green);
         padding: 20px;
         border-radius: 50%;
+        flex-shrink: 0;
         @include from-to(1025px, 1320px){
             width: 64px;
             height: 64px;
@@ -244,6 +247,11 @@
         @include to(600px){
             font-size: 18px;
         }
+        [data-current],
+        [data-all] {
+            width: 2.5ch;
+            display: inline-block;
+        }
         svg {
             cursor: pointer;
             @include to(600px){
@@ -251,5 +259,22 @@
                 height: 48px;
             }
         }
+        @media (hover: hover) {
+            svg [fill] {
+                transition: fill 0.3s;
+            }
+            svg [stroke] {
+                transition: fill 0.3s;
+            }
+            svg:hover [fill] {
+                fill: var(--green);
+            }
+            svg:hover [stroke] {
+                stroke: var(--white)
+            }
+        }
+    }
+    [data-planning-tab].active {
+        pointer-events: none;
     }
 }

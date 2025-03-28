@@ -324,7 +324,7 @@ body {
       .slick-prev {
         position: absolute;
         left: calc(8.33333% + 15px + var(--page-side-fields));
-        bottom: var(--v-padding);
+        bottom: calc(var(--v-padding) + 12px);
         width: 55px;
         height: 55px;
         background-color: #404F44;
@@ -941,7 +941,8 @@ body {
   .button--calypso::before,
   .button--calypso--green::before {
     content: '';
-    background-color: #404F44;
+    // background-color: #404F44;
+    background-color: var(--color-ocher);
     border-radius: 35px;
     width: 120%;
     height: 0;
@@ -949,6 +950,9 @@ body {
     top: -110%;
     left: -10%;
     transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+  }
+  .button--secondary::before {
+    background-color: #404F44;
   }
 
   .button--calypso:hover::before,
@@ -969,6 +973,10 @@ body {
     transition-duration: 0.05s;
     transition-delay: 0.4s;
     transition-timing-function: linear;
+    background-color: var(--color-ocher);
+  }
+  .button--secondary:hover::after {
+    background-color: #404F44;
   }
   header {
     .header {
@@ -1700,7 +1708,7 @@ body {
       &-slider {
         .slick-next,
         .slick-prev {
-          left: calc(100% - 90px - var(--page-side-fields));
+          left: calc(100% - 120px - var(--page-side-fields));
           bottom: 45px;
           width: 35px;
           height: 35px;
@@ -1981,7 +1989,7 @@ body.home header .header__bg {
   &__map-legend {
     position: absolute;
     left: 0;
-    bottom: 50%;
+    bottom: 41%;
     z-index: 2;
     padding: 20px;
     transform: translateY(50%);

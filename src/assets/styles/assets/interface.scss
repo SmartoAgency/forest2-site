@@ -93,6 +93,31 @@
         --color: var(--Black, #1F1F1F);
         --bg-color: var(--white);
     }
+    @media (hover: hover) {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease-out;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.3s ease-out;
+            width: 100%;
+            height: 100%;
+            background-color: var(--green);
+            transform: translate3d(0, -100%, 0);
+            z-index: -1;
+        }
+
+        &:hover {
+            background-color: transparent;
+            color: var(--white);
+            &:before {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
 }
 
 .social-icon {
@@ -130,6 +155,7 @@
         }
 
         &:hover {
+            border-color: transparent;
             &:before {
                 transform: translate3d(0, 0, 0);
             }

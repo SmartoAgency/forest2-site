@@ -53,7 +53,7 @@ function initMap() {
   /** Елементы, при клике на который будет происходить фильтрация */
   const filterItems = document.querySelectorAll('[data-marker]');
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
+    zoom: window.screen.width < 600 ? 14 : 16,
     center,
     scrollwheel: false,
     navigationControl: false,
@@ -117,6 +117,24 @@ function initMap() {
     });
   });
 
+  document.querySelectorAll('[data-marker-hide]').forEach((el) => {
+    el.addEventListener('click', () => {
+      gmarkers1.forEach((el) => {
+        if (el.category === 'main') {
+          el.setMap(map);
+          el.setAnimation(google.maps.Animation.DROP);
+        } else {
+          el.setMap(null);
+        }
+      });
+      document.querySelectorAll('[data-marker]').forEach((item) => {
+        item.classList.remove('active');
+      })
+    });
+  });
+
+
+
   filterItems.forEach((item) => {
     item.addEventListener('click', (evt) => {
       evt.stopImmediatePropagation();
@@ -145,6 +163,7 @@ function initMap() {
   
   ajaxMarkers.then(result => {
     putMarkersOnMap(result, map);
+    document.querySelector('[data-marker-hide]').click();
     console.log('ajaxMarkers', result);
   })
 
