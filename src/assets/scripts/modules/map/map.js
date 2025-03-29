@@ -59,6 +59,10 @@ function initMap() {
     navigationControl: false,
     mapTypeControl: false,
     scaleControl: false,
+    zoomControl: true,
+    zoomControlOptions: {
+      position: google.maps.ControlPosition.RIGHT_CENTER,
+    },
     draggable: true,
     // gestureHandling: 'cooperative',
     language: document.documentElement.getAttribute('lang') || 'en',
@@ -92,6 +96,49 @@ function initMap() {
     google.maps.event.trigger(map, "resize");
     map.fitBounds(bounds);
   });
+
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+    // zoomLevel = map.getZoom();
+    console.log('zoomLevel', map.zoom);
+    // scale gmarkers1 by zoom level
+
+    // gmarkers1.forEach((el) => {
+    //   console.log('el.category', el);
+      
+    // })
+
+    let scaledSize;
+    let anchor;
+    //set the icon with the new size to the marker
+    //125, 55
+    if (map.zoom >= 20) {
+      scaledSize = new google.maps.Size(50, 58);
+      anchor = new google.maps.Point(25, 58);
+    } else if (map.zoom >= 16) {
+      scaledSize = new google.maps.Size(40, 48);
+      anchor = new google.maps.Point(20, 48);
+    } else if (map.zoom >= 13) {
+      scaledSize = new google.maps.Size(30, 38);
+      anchor = new google.maps.Point(15, 38);
+    } else if (map.zoom >= 7) {
+      scaledSize = new google.maps.Size(20, 28);
+      anchor = new google.maps.Point(10, 28);
+    } else if (map.zoom >= 5) {
+      scaledSize = new google.maps.Size(10, 18);
+      anchor = new google.maps.Point(5, 18);
+    } else {
+      scaledSize = new google.maps.Size(5, 9);
+      anchor = new google.maps.Point(2.5, 9);
+    }
+    for (var i = 0; i < gmarkers1.length; i++) {
+      var icon = gmarkers1[i].getIcon();
+      icon.scaledSize = scaledSize;
+      icon.anchor = anchor;
+      gmarkers1[i].setIcon(icon);
+    }
+
+
+});
 
 
   const filterMarkers = function (category, categoriesArray) {

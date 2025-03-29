@@ -2013,6 +2013,7 @@ body.home header .header__bg {
     @include to(600px){
       bottom: 0;
       transform: none;
+      width: 270px;
     }
     &-head {
       display: flex;
