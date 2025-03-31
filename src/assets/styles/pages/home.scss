@@ -1720,17 +1720,18 @@ body {
       &-slider {
         .slick-next,
         .slick-prev {
-          left: calc(100% - 120px - var(--page-side-fields));
+          // left: calc(100% - 120px - var(--page-side-fields));
+          left: calc(50vw - (40px));
           bottom: 45px;
-          width: 35px;
-          height: 35px;
+          width: 48px;
+          height: 48px;
           svg {
             width: 5.09px;
             height: 8.91px;
           }
         }
         .slick-next {
-          margin-left: calc(35px + 20px);
+          margin-left: calc(48px + 15px);
         }
       }
     }
