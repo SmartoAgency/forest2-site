@@ -173,6 +173,12 @@
       display: none;
     }
   }
+  &__socials {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
   .footer {
     @include row-flex();
     &__content {

@@ -3,8 +3,8 @@ export default function markersFromPrevSite() {
         {
             "title": 'Forest Home',
             "category": 'main',
-            "lat": '49.23704965563479',
-            "lng": '28.427021154684287',
+            lat: 49.238198598629744, 
+            lng: 28.42681690840092,
             "description": 'Forest Home'
         },
         {

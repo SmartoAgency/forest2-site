@@ -33,16 +33,16 @@ observable.subscribe((value) => {
             },
             on: {
                 'init': (instance) => {
-                    document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
+                    // document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
                 },
             }
         });
         swiper.on('beforeResize', (instance) => {
-            document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
+            // document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
         });
         swiper.on('slideChange', (instance) => {
             document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-current]`).textContent = pad(instance.realIndex + 1);
-            document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
+            // document.querySelector(`[data-planning-tab-slider-nav="${index}"] [data-all]`).textContent = pad(instance.slides.length);
         });
     });
 });

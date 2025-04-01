@@ -73,22 +73,29 @@ function initMap() {
     ? './assets/images/markers/'
     : '/wp-content/themes/forest-home/assets/images/markers/';
 
-  iniCircleWithTooltip({
+  const gDistanceMarkers = [];
+
+  gDistanceMarkers.push(iniCircleWithTooltip({
     map,
     radius: 500,
     tooltipImgUrl: `${baseFolder}500m.svg`,
-  })
-  iniCircleWithTooltip({
+  }))
+  gDistanceMarkers.push(iniCircleWithTooltip({
     map,
     radius: 1000,
     tooltipImgUrl: `${baseFolder}1km.svg`,
-  });
+  }));
 
-  iniCircleWithTooltip({
+  gDistanceMarkers.push(iniCircleWithTooltip({
     map,
     radius: 1500,
     tooltipImgUrl: `${baseFolder}1_5km.svg`,
-  });
+  }));
+  gDistanceMarkers.push(iniCircleWithTooltip({
+    map,
+    radius: 250,
+    tooltipImgUrl: `${baseFolder}250m.svg`,
+  }));
 
   google.maps.event.addDomListener(window, "resize", function() {
     console.log('resize');
@@ -98,14 +105,22 @@ function initMap() {
   });
 
   google.maps.event.addListener(map, 'zoom_changed', function() {
-    // zoomLevel = map.getZoom();
     console.log('zoomLevel', map.zoom);
-    // scale gmarkers1 by zoom level
 
-    // gmarkers1.forEach((el) => {
-    //   console.log('el.category', el);
-      
-    // })
+    gDistanceMarkers.forEach((group) => {
+      Object.values(group).forEach((el) => {
+        if (map.zoom < 14) {
+          el.setVisible(false);
+          el.setVisible(false);
+          el.setVisible(false);
+        } else {
+          el.setVisible(true);
+          el.setVisible(true);
+          el.setVisible(true);
+        }
+      })
+    });
+    
 
     let scaledSize;
     let anchor;
@@ -136,6 +151,7 @@ function initMap() {
       icon.anchor = anchor;
       gmarkers1[i].setIcon(icon);
     }
+    
 
 
 });
@@ -160,7 +176,11 @@ function initMap() {
       filterItems.forEach((item) => {
         item.classList.remove('active');
       });
+      el.classList.add('unactive');
       filterMarkers('main', choosedCategories);
+      document.querySelectorAll('[data-marker-hide]').forEach((el) => {
+        el.classList.remove('unactive');
+      })
     });
   });
 
@@ -174,6 +194,10 @@ function initMap() {
           el.setMap(null);
         }
       });
+      el.classList.add('unactive');
+      document.querySelectorAll('[data-marker-reset]').forEach((el) => {
+        el.classList.remove('unactive');
+      })
       document.querySelectorAll('[data-marker]').forEach((item) => {
         item.classList.remove('active');
       })
@@ -200,6 +224,10 @@ function initMap() {
         }
       }
       filterMarkers('main', choosedCategories);
+
+      document.querySelectorAll('[data-marker-reset], [data-marker-hide]').forEach((el) => {
+        el.classList.remove('unactive');
+      })
       console.log('choosedCategories', choosedCategories);
       
     });
@@ -304,8 +332,8 @@ function iniCircleWithTooltip({
 
 }) {
   const center = {
-    lat: 49.237055962508656,
-    lng: 28.4270179805356,
+    lat: 49.238198598629744, 
+    lng: 28.42681690840092,
   };
 
   const tooltip1MeterOffset = 0.00001374;
