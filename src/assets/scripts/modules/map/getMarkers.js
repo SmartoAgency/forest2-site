@@ -6,6 +6,7 @@ const baseFolder = window.location.href.match(/localhost/)
 
 const markersAdresses = {
     main: `${baseFolder}main.svg`,
+    main2: `${baseFolder}main2.svg`,
     shop: `${baseFolder}shop.svg`,
     education: `${baseFolder}education.svg`,
     cafe: `${baseFolder}cafe.svg`,
@@ -53,7 +54,8 @@ export async function fetchMarkersData(google) {
       if (!el.list) return acc;
       el.list.forEach(marker => {
         acc.push({
-          content: `<div ${markerPopupStyle}>${marker.name}</div>`,
+          // content: `<div ${markerPopupStyle}>${marker.name}</div>`,
+          content: marker.name,
           position: { 
             lat: marker.coordinations.latitude, 
             lng: marker.coordinations.elevation 

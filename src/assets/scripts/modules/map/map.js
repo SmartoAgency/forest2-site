@@ -159,7 +159,7 @@ function initMap() {
 
   const filterMarkers = function (category, categoriesArray) {
     gmarkers1.forEach((el) => {
-      if (categoriesArray.has(el.category) || categoriesArray.size <= 1) {
+      if (categoriesArray.has(el.category) || categoriesArray.size <= 1 || el.category == 'main2') {
         el.setMap(map);
         el.setAnimation(google.maps.Animation.DROP);
       } else {
@@ -187,7 +187,7 @@ function initMap() {
   document.querySelectorAll('[data-marker-hide]').forEach((el) => {
     el.addEventListener('click', () => {
       gmarkers1.forEach((el) => {
-        if (el.category === 'main') {
+        if (el.category === 'main' || el.category === 'main2') {
           el.setMap(map);
           el.setAnimation(google.maps.Animation.DROP);
         } else {
