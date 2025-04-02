@@ -131,6 +131,9 @@
     gap: 10px;
     position: relative;
     overflow: hidden;
+    &--dark {
+        border-color: var(--color-green);
+    }
 
     svg {
         width: 16px;
@@ -138,6 +141,13 @@
         flex-shrink: 0;
         position: relative;
         z-index: 1;
+    }
+
+    &--dark svg [fill] {
+        fill: var(--color-green);
+    }
+    &--dark svg [stroke] {
+        stroke: var(--color-green);
     }
 
     @media (hover: hover) {
@@ -152,6 +162,20 @@
             background-color: var(--green);
             border-radius: 50%;
             transform: translate3d(0, -100%, 0);
+        }
+
+        &--dark svg [fill] {
+            transition: .25s ease-out;
+        }
+        &--dark svg [stroke] {
+            transition: .25s ease-out;
+        }
+        
+        &--dark:hover svg [fill] {
+            fill: white;
+        }
+        &--dark:hover svg [stroke] {
+            stroke: white;
         }
 
         &:hover {
