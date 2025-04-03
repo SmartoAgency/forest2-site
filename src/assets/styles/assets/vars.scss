@@ -91,7 +91,7 @@ $gold: #cfa46e;
 //   }
 // }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   :root {
     --fz-small-text: 12px;
     --fz-menu-link: 50px;
@@ -104,10 +104,10 @@ $gold: #cfa46e;
     --fz-13: 10px;
 
     --page-side-fields: 28px;
-	--header-h: 70px;
+	--header-h: 105px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   :root {
     --fz-big-text: 12px;
     --fz-title-inner-page: 24px;

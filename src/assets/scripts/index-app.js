@@ -18,7 +18,7 @@ window.addEventListener('load', function(evt) {
   animation(lenis);
 });
 
-if (window.screen.width < 600) {
+if (window.screen.width <= 1024) {
   document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
 }
 

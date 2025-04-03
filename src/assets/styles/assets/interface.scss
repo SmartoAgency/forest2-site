@@ -254,6 +254,10 @@
         height: max-content;
         /* 105.6px */
         text-transform: uppercase;
+        @include from-to(601px, 1024px){
+            @include size(5);
+            @include shift(0);
+        }
         
         .text-style-1920-h-2 {
             font-size: 96px;
@@ -339,6 +343,8 @@
         }
 
         @include from-to(601px, 1024px) {
+            @include size(7);
+            @include shift(0);
             &>:nth-child(n+2) {
                 margin-top: 150px;
             }
@@ -359,7 +365,7 @@
                 top: calc(var(--header-h) + #{$i * 15}px);
 
                 @include to(1024px) {
-                    top: calc(var(--header-h) + #{$i * 5}px + (36px * 5) + 20px);
+                    top: calc(var(--header-h) + #{$i * 5}px + (36px * 2) + 20px);
                 }
 
                 @include to(600px) {
@@ -527,9 +533,6 @@
     &--black-white &__description,
     &--black-white &__content {
         color: var(--color-black);
-        @media screen and (max-width:600px){
-            color: var(--white);
-        }
     }
     &--black-white &__digit {
         color: var(--white);

@@ -91,6 +91,7 @@ header {
         opacity: 0.2;
         margin-left: 20px;
         margin-right: 20px;
+        @include from-to(601px, 1025px){}
 
       }
       &-popup-mobile {

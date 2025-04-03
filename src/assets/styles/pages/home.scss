@@ -160,7 +160,7 @@ body {
   border-radius: 40px;
   padding-left: 0;
   padding-right: 0;
-  @include to(600px){
+  @include to(1024px){
     height: calc(var(--vh, 1vh) * 100 - var(--header-h) - 20px);
   }
   @include to(600px){
@@ -228,6 +228,7 @@ body {
     border-radius: 100px;
     background: rgba(255, 255, 255, 0.01);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     color: var(--white);
     font-family: Inter;
     font-size: 32px;
@@ -2085,4 +2086,15 @@ body.home header .header__bg {
   }
 }
 
-@import '../includes/home/plannings-section'
+@import '../includes/home/plannings-section';
+
+
+@include from-to(601px, 1025px){
+  .menu-top__left a[href*="complex"],
+  .header a[href*="complex"] {
+    display: none;
+  }
+  .header__logo {
+    margin-right: 12px;
+  }
+}
