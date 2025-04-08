@@ -99,10 +99,12 @@ formsWithRedirect.forEach(form => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          document.querySelector('.thanks-page').style.opacity = 1;
-          setTimeout(() => {
-            document.querySelector('.thanks-page').style.opacity = 0;
-          }, 5000);
+
+          // document.querySelector('.thanks-page').style.opacity = 1;
+          // setTimeout(() => {
+          //   document.querySelector('.thanks-page').style.opacity = 0;
+          // }, 5000);
+          window.location = '/thefloors-thanks';
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
@@ -156,13 +158,14 @@ forms.forEach(form => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          document.querySelector('.thanks-page').style.opacity = 1;
-          setTimeout(() => {
-            document.querySelector('.thanks-page').style.opacity = 0;
-          }, 5000);
-          setTimeout(() => {
-            document.querySelector('#popup').classList.remove('active');
-          }, 500);
+          // document.querySelector('.thanks-page').style.opacity = 1;
+          // setTimeout(() => {
+          //   document.querySelector('.thanks-page').style.opacity = 0;
+          // }, 5000);
+          // setTimeout(() => {
+          //   document.querySelector('#popup').classList.remove('active');
+          // }, 500);
+          window.location = '/thefloors-thanks';
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
@@ -262,5 +265,14 @@ document.body.addEventListener('click', evt => {
   });
 });
 
+if (document.querySelector('.accordion-container')) {
+  new Accordion(".accordion-container");
+}
 
-new Accordion(".accordion-container");
+
+document.querySelectorAll('.place-holder').forEach(el => {
+  el.addEventListener('click', () => {
+    el.style.display = 'none';
+    el.parentElement.querySelector('input').focus();
+  });
+})
